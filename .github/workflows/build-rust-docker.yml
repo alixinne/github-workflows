@@ -146,6 +146,11 @@ on:
         required: false
         type: string
 
+      docker_test_image_command:
+        description: Command to execute to test the produced image
+        required: false
+        type: string
+
       semantic_extra_plugins:
         description: List of semantic-release extra plugins to install
         default: |
@@ -371,7 +376,24 @@ jobs:
             type=semver,pattern={{major}},enabled=${{ steps.semantic.outputs.new_release_published }},value=${{ steps.semantic.outputs.new_release_version }}
             type=sha
 
-      - name: Build and push image
+      - name: Build image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ${{ inputs.docker_dockerfile }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.output.labels }}
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Test image
+        if: inputs.docker_test_image_command
+        shell: bash
+        run: |
+          docker run -i $(head -1 <<< "$DOCKER_METADATA_OUTPUT_TAGS") ${{ inputs.docker_test_image_command }}
+
+      - name: Push image
         uses: docker/build-push-action@v3
         with:
           context: .

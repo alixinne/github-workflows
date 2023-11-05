@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/vtavernier/github-workflows/compare/v1.3.1...v1.4.0) (2023-11-05)
+
+
+### Features
+
+* **build-rust-docker:** add command to test image before push ([0ac52c1](https://github.com/vtavernier/github-workflows/commit/0ac52c187c935deacda98c64565f25f4ced74c8c))
+
 ## [1.3.1](https://github.com/vtavernier/github-workflows/compare/v1.3.0...v1.3.1) (2023-07-15)
 
 

@@ -37,5 +37,5 @@ on:
 
 jobs:
   check:
-    uses: vtavernier/github-workflows/.github/workflows/check-rust.yml@WORKFLOW_VERSION
+    uses: alixinne/github-workflows/.github/workflows/check-rust.yml@WORKFLOW_VERSION
 ```

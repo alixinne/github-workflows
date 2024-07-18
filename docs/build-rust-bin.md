@@ -37,7 +37,7 @@ on:
 
 jobs:
   build:
-    uses: vtavernier/github-workflows/.github/workflows/build-rust-bin.yml@WORKFLOW_VERSION
+    uses: alixinne/github-workflows/.github/workflows/build-rust-bin.yml@WORKFLOW_VERSION
     secrets:
       # Used by semantic-release for pushing to master
       GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}

@@ -31,7 +31,7 @@
 #
 # jobs:
 #   build:
-#     uses: vtavernier/github-workflows/.github/workflows/build-rust-docker.yml@WORKFLOW_VERSION
+#     uses: alixinne/github-workflows/.github/workflows/build-rust-docker.yml@WORKFLOW_VERSION
 #     with:
 #       develop_branch_name: dev # If you have a `develop` branch
 #     secrets:
@@ -229,7 +229,7 @@ jobs:
         run: cargo make ci-pre-check
 
       - name: Run Rust checks
-        uses: vtavernier/github-workflows/actions/check-rust@734b80d6bc95c6d356b54b453848e945f0d32e4c
+        uses: alixinne/github-workflows/actions/check-rust@734b80d6bc95c6d356b54b453848e945f0d32e4c
         with:
           rust_checks_rustflags: ${{ inputs.rust_checks_rustflags }}
           rust_checks_args: ${{ inputs.rust_checks_args }}

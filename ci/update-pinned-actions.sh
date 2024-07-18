@@ -33,7 +33,7 @@ for ACTION in actions/*; do
 
   if [[ $CHECK_MODE == 1 ]]; then
     # Check that there are no references to the outdated action
-    readarray -t OUTDATED_FILES < <(grep -P "vtavernier/github-workflows/$ACTION@(?!$HEAD_REF)" -r -n .github/workflows actions/*/action.yml)
+    readarray -t OUTDATED_FILES < <(grep -P "alixinne/github-workflows/$ACTION@(?!$HEAD_REF)" -r -n .github/workflows actions/*/action.yml)
     for FILE in "${OUTDATED_FILES[@]}"; do
       echo "::error file=$(awk -F: '{print $1}' <<< "$FILE"),line=$(awk -F: '{print $2}' <<< "$FILE")::$ACTION pinned version is outdated. Latest version: $HEAD_REF. Current version in dependent: $(awk -F@ '{print $NF}' <<< "$FILE")"
 
@@ -41,7 +41,7 @@ for ACTION in actions/*; do
     done
   else
     # Replace the reference to the action with the pinned commit
-    dry_run sed -i "s#\(vtavernier/github-workflows/$ACTION@\)[^ ]*#\1$HEAD_REF#g" \
+    dry_run sed -i "s#\(alixinne/github-workflows/$ACTION@\)[^ ]*#\1$HEAD_REF#g" \
       .github/workflows/*.yml actions/*/action.yml
   fi
 done

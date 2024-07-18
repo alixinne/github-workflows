@@ -37,7 +37,7 @@ on:
 
 jobs:
   build:
-    uses: vtavernier/github-workflows/.github/workflows/build-rust-docker.yml@WORKFLOW_VERSION
+    uses: alixinne/github-workflows/.github/workflows/build-rust-docker.yml@WORKFLOW_VERSION
     with:
       develop_branch_name: dev # If you have a `develop` branch
     secrets:

@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/alixinne/github-workflows/compare/v1.4.0...v1.5.0) (2026-03-28)
+
+
+### Bug Fixes
+
+* update github profile information ([acf9690](https://github.com/alixinne/github-workflows/commit/acf96906c6f91300ecbb027b46dfebb5ba4e870b))
+
+
+### Features
+
+* **deps:** bump golangci-lint action and version ([a590f95](https://github.com/alixinne/github-workflows/commit/a590f95d42dd8aaf7ffb9342c90b8bbea5813d39))
+
 # [1.4.0](https://github.com/alixinne/github-workflows/compare/v1.3.1...v1.4.0) (2023-11-05)
 
 

@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check commits
-        uses: alixinne/github-workflows/actions/commitlint@463fff6e61c01fc139d544de20af9e80fdd6ee51
+        uses: alixinne/github-workflows/actions/commitlint@acf96906c6f91300ecbb027b46dfebb5ba4e870b
         with:
           lint-from: HEAD~${{ github.event.pull_request.commits }}
           lint-to: HEAD

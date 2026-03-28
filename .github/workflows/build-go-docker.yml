@@ -58,7 +58,7 @@ on:
 
       golangci_lint_version:
         description: Version of golangci-lint to use
-        default: 1.52.2
+        default: 2.11.4
         required: false
         type: string
 
@@ -164,7 +164,7 @@ jobs:
         run: task pre-lint
 
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v9
         with:
           version: v${{ inputs.golangci_lint_version }}
 
